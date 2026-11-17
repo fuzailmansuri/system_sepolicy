@@ -21,6 +21,9 @@ attribute fs_type;
 # All types used for context= mounts.
 attribute contextmount_type;
 
+# All types used for sdcard_posix context= mounts.
+attribute sdcard_posix_contextmount_type;
+
 # All types referencing a FUSE filesystem.
 # When mounting a new FUSE filesystem, the fscontext= option should be used to
 # set a domain-specific type with this attribute. See app_fusefs for an
@@ -60,9 +63,6 @@ attribute vendor_file_type;
 # All types used for procfs files.
 attribute proc_type;
 expandattribute proc_type false;
-
-# Allowlisted domains that may violate the domain:dir restrictions on init
-attribute init_dir_mutation_exempt;
 
 # Types in /proc/net, excluding qtaguid types.
 # TODO(b/9496886) Lock down access to /proc/net.
